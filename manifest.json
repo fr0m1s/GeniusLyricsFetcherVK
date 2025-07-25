@@ -1,0 +1,49 @@
+﻿{
+  "manifest_version": 3,
+  "name": "genius lyrics fetcher for vk",
+  "version": "2.0",
+  "description": "fetches current vk track lyrics from genius. replaces the dislike button in vk player.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [ "https://*.vk.com/*" ],
+      "js": [ "content.js" ],
+      "css": [ "styles.css" ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*.vk.com/*",
+    "https://api.genius.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/icon.svg",
+        "guide.html",
+        "popup.css"
+      ],
+      "matches": [ "https://*.vk.com/*" ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts; script-src 'self'"
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

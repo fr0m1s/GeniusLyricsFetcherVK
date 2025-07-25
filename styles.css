@@ -1,0 +1,18 @@
+﻿.genius-lyrics-btn {
+    transition: transform 0.1s ease, opacity 0.2s ease;
+    opacity: 0.9;
+}
+
+    .genius-lyrics-btn:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    .genius-lyrics-btn:active {
+        transform: scale(0.95);
+    }
+
+/* Для темной темы */
+.vkui--vkCom--dark .genius-lyrics-btn img {
+    filter: invert(1) brightness(0.85);
+}
